@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
+
+:root {
+    --color-light-bg: #f9f9f9;
+    --color-light-text: #222;
+    --color-light-primary: #0066ff;
+    --color-dark-bg: #121212;
+    --color-dark-text: #eee;
+    --color-dark-primary: #82aaff;
+}
+
+html, body {
+    margin: 0; padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--color-light-bg);
+    color: var(--color-light-text);
+    height: 100%;
+    scroll-behavior: smooth;
+    transition: background 0.4s, color 0.4s;
+}
+
+body.dark {
+    background: var(--color-dark-bg);
+    color: var(--color-dark-text);
+}
+
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background: transparent;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: default;
+    user-select: none;
+    color: inherit;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+nav ul li a {
+    font-weight: 400;
+    font-size: 1rem;
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+    opacity: 1;
+}
+
+button#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    user-select: none;
+}
+button#theme-toggle:hover {
+    opacity: 1;
+}
+
+header.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+header.hero img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+header.hero h1 {
+    font-weight: 700;
+    font-size: clamp(4rem, 10vw, 6rem);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2em;
+}
+header.hero p {
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-light-primary);
+}
+body.dark header.hero p {
+    color: var(--color-dark-primary);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 2rem 6rem 2rem; /* extra padding onderaan */
+    background: transparent;
+}
+
+/* Dark mode achtergrond ook voor main */
+body.dark main {
+    background: var(--color-dark-bg);
+    color: var(--color-dark-text);
+}
+
+main section {
+    margin-top: 8rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    outline: none;
+}
+main section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+main section h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+main section p {
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 1.3rem;
+    color: var(--color-light-text);
+}
+body.dark main section p,
+body.dark main section h2,
+body.dark main section h3 {
+    color: #ccc;
+}
+
+#projecten .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fffefc;
+}
+body.dark .project-card {
+    background-color: var(--color-dark-bg);
+    box-shadow: 0 8px 30px rgba(255 255 255 / 0.1);
+}
+.project-card:hover,
+.project-card:focus {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    min-width: 320px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.project-card:hover .image-wrapper img,
+.project-card:focus .image-wrapper img {
+    transform: scale(1.05) translateY(-5%);
+}
+
+.project-title {
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin: 1.25rem 1.25rem 0.5rem 1.25rem;
+    line-height: 1.2;
+}
+
+.project-desc {
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin: 0 1.25rem 1.75rem 1.25rem;
+    color: var(--color-light-primary);
+}
+body.dark .project-desc {
+    color: var(--color-dark-primary);
+}
+
+#contact {
+    margin-bottom: 6rem;
+    padding-bottom: 4rem;
+}
+
+#contact a {
+    color: var(--color-light-primary);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+body.dark #contact a {
+    color: var(--color-dark-primary);
+}
+#contact a:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 500px) {
+    nav {
+        padding: 0 1rem;
+    }
+    header.hero img {
+        width: 130px;
+        height: 130px;
+    }
+    header.hero h1 {
+        font-size: 3rem;
+    }
+    main section {
+        margin-top: 4rem;
+    }
+}

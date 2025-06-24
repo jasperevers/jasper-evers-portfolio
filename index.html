@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Jasper Evers</title>
 </head>
 <body>
-<p>Hello World</p>
+
+<nav>
+    <div class="logo" aria-label="Logo">JE</div>
+    <ul>
+        <li><a href="#over-mij" class="nav-link active">Over mij</a></li>
+        <li><a href="#projecten" class="nav-link">Projecten</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+</nav>
+
+<header class="hero" role="banner">
+    <img src="./images/profiel_foto.jpeg" alt="Profielfoto Jasper Evers"/>
+    <h1>Jasper Evers</h1>
+    <p>MBO4 Software Development afgerond | HBO-ICT student Hogeschool Utrecht</p>
+    <p>Deze pagina is een work in progress</p>
+</header>
+
+<main>
+    <section id="over-mij" tabindex="-1">
+        <h2>Over mij</h2>
+        <p>Hoi! Ik ben Jasper, een enthousiaste softwareontwikkelaar. Ik heb mijn mbo4-opleiding Software Development
+            afgerond en studeer nu HBO-ICT aan de Hogeschool Utrecht. Ik houd van programmeren en het bouwen van mooie,
+            gebruiksvriendelijke apps.</p>
+    </section>
+
+    <section id="projecten" tabindex="-1">
+        <h2>Projecten</h2>
+        <div class="project-grid">
+            <a href="https://denarreknollen.nl/" target="_blank" rel="noopener" class="project-card"
+               aria-label="Bekijk project Narreknollen website">
+                <div class="image-wrapper">
+                    <img src="./images/project/narreknollen_card_img.png"
+                         alt="Narreknollen Website preview" loading="lazy"/>
+                </div>
+                <h3 class="project-title">Website Narreknollen</h3>
+                <p class="project-desc">Website voor de NarreKnollen carnavals vereneging</p>
+            </a>
+
+            <a href="#" class="project-card" aria-label="Bekijk project Voorbeeld Project">
+                <div class="image-wrapper">
+                    <img src="https://placehold.co/600x338/png?text=Voorbeeld+Project"
+                         alt="Voorbeeld project afbeelding" loading="lazy"/>
+                </div>
+                <h3 class="project-title">Voorbeeld Project</h3>
+                <p class="project-desc">Beschrijving van het voorbeeld project.</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" tabindex="-1">
+        <h2>Contact</h2>
+        <p>Mail me op <a href="mailto:jasperevers@hotmail.nl">jasperevers@hotmail.nl</a> of volg me op <a
+                href="https://www.linkedin.com/in/jasper-evers-3b807417a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+    </section>
+</main>
+<script src="js/script.js"></script>
 </body>
 </html>
